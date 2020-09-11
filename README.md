@@ -109,3 +109,23 @@ aws_lb.application-load-balancer: Still creating... [50s elapsed]
 aws_lb.application-load-balancer: Still creating... [1m0s elapsed]
 aws_lb.application-load-balancer: Still creating... [1m10s elapsed]
 ```
+### Terraform destroy
+terraform destroy
+```
+Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value: **yes**
+
+aws_autoscaling_policy.auto-scaling-policy-CPU: Destroying... [id=CPU]
+aws_lb_listener.application-listener-http: Destroying... [id=arn:aws:elasticloadbalancing:us-east-1:461184534637:listener/app/test/68b4faaea78a0521/a7191ca120a6ddf6]
+aws_autoscaling_policy.auto-scaling-policy-BW: Destroying... [id=BW]
+aws_lb_listener.application-listener-https: Destroying... [id=arn:aws:elasticloadbalancing:us-east-1:461184534637:listener/app/test/68b4faaea78a0521/231501e417913f83]
+aws_lb_listener.application-listener-https: Destruction complete after 1s
+aws_lb_listener.application-listener-http: Destruction complete after 1s
+aws_lb.application-load-balancer: Destroying... [id=arn:aws:elasticloadbalancing:us-east-1:461184534637:loadbalancer/app/test/68b4faaea78a0521]
+aws_autoscaling_policy.auto-scaling-policy-CPU: Destruction complete after 1s
+aws_autoscaling_policy.auto-scaling-policy-BW: Destruction complete after 1s
+aws_autoscaling_group.auto-scaling-group: Destroying... [id=test]
+```
