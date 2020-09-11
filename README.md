@@ -143,7 +143,7 @@ Do you really want to destroy all resources?
   Terraform will destroy all your managed infrastructure, as shown above.
   There is no undo. Only 'yes' will be accepted to confirm.
 
-  Enter a value: **yes**
+  Enter a value: yes
 
 aws_autoscaling_policy.auto-scaling-policy-CPU: Destroying... [id=CPU]
 aws_lb_listener.application-listener-http: Destroying... [id=arn:aws:elasticloadbalancing:us-east-1:461184534637:listener/app/test/68b4faaea78a0521/a7191ca120a6ddf6]
