@@ -76,13 +76,11 @@ Success! The configuration is valid.
 ```
 ### Deploy the scaling system
 terrafrom apply
+```
 var.certificate_arn
   The local certificate ARN was get from previous step
   Enter a value: arn:aws:iam::XXXXXXXXXXXXXXX:server-certificate/application-loadbalacer-x509
-
-var.privatekey_directory
-  The directory of RSA private key created: /home/<user>/.ssh/id_rsa
-  Enter a value: /home/cloud_user/.ssh/id_rsa
+```
 ```
 An execution plan has been generated and is shown below.
 
