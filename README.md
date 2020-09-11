@@ -15,7 +15,7 @@
  openssl x509 -req -days 365 -in csr.pem -signkey privatekey.pem -out public.crt 
 
 #### Put the certificate into IAM:
- aws iam upload-server-certificate --server-certificate-name elastic-beanstalk-x509 --certificate-body file://public.crt --private-key file://privatekey.pem
+ **aws iam upload-server-certificate --server-certificate-name elastic-beanstalk-x509 --certificate-body file://public.crt --private-key file://privatekey.pem**
 ```json
  { 
     "ServerCertificateMetadata": { 
