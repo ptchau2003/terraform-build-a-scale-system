@@ -69,7 +69,7 @@ resource "aws_security_group" "ec2-sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = []
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   egress {
@@ -209,14 +209,28 @@ resource "aws_lb" "application-load-balancer" {
   }
 }
 
-resource "aws_lb_listener" "application-listener" {
+resource "aws_lb_listener" "application-listener-https" {
   load_balancer_arn = aws_lb.application-load-balancer.arn
-  port              = "80"
-  protocol          = "HTTP"
-
+  port              = "443"
+  protocol          = "HTTPS"
+  ssl_policy        = "ELBSecurityPolicy-2016-08"
+  certificate_arn   = "arn:aws:iam::420672505413:server-certificate/elastic-beanstalk-x509"
   default_action {
     type             = "forward"
     target_group_arn = aws_lb_target_group.auto-target-group.arn
   }
 }
 
+resource "aws_lb_listener" "application-listener-http" {
+  load_balancer_arn = aws_lb.application-load-balancer.arn
+  port              = "80"
+  protocol          = "HTTP"
+  default_action {
+    type             = "redirect"
+    redirect {
+      port        = "443"
+      protocol    = "HTTPS"
+      status_code = "HTTP_301"
+    }
+  }
+}
