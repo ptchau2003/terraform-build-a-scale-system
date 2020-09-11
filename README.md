@@ -14,7 +14,7 @@
  ###### Generate CRT key:
  openssl x509 -req -days 365 -in csr.pem -signkey privatekey.pem -out public.crt 
 
-* Put into IAM:
+#### Put into IAM:
 > aws iam upload-server-certificate --server-certificate-name elastic-beanstalk-x509 --certificate-body file://public.crt --private-key file://privatekey.pem
 > {
 >    "ServerCertificateMetadata": {
