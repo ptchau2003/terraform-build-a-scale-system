@@ -14,6 +14,7 @@
 
 ### Put the certificate into IAM:
  *aws iam upload-server-certificate --server-certificate-name application-loadbalacer-x509 --certificate-body file://public.crt --private-key file://privatekey.pem*
+ **TAKE NOTE THE ARN**
 ```json
  { 
     "ServerCertificateMetadata": { 
