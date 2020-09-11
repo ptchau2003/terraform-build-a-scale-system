@@ -26,7 +26,7 @@
      } 
  }
  ```
-### Input the AWS key, prepare for the AWS deploy
+### Input the AWS key, prepare for the AWS deployment
 aws configure
 ```
 AWS Access Key ID [****************XUOH]: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -75,22 +75,23 @@ Do you want to perform these actions?
   Terraform will perform the actions described above.
   Only 'yes' will be accepted to approve.
 
-  Enter a value: **yes**
+  Enter a value: yes
+
 aws_key_pair.ec2-key: Creating...
 aws_default_vpc.default: Creating...
-aws_key_pair.ec2-key: Creation complete after 0s [id=ec2-key]
-aws_default_vpc.default: Creation complete after 4s [id=vpc-036ae5d3b549574df]
+aws_key_pair.ec2-key: Creation complete after 1s [id=ec2-key]
+aws_default_vpc.default: Creation complete after 5s [id=vpc-036ae5d3b549574df]
 data.aws_subnet_ids.default: Reading...
 aws_lb_target_group.auto-target-group: Creating...
 aws_security_group.loadbalance-sg: Creating...
-data.aws_subnet_ids.default: Read complete after 1s [id=vpc-036ae5d3b549574df]
-aws_lb_target_group.auto-target-group: Creation complete after 2s [id=arn:aws:elasticloadbalancing:us-east-1:461184534637:targetgroup/test/ee53559f2226cc9c]
-aws_security_group.loadbalance-sg: Creation complete after 4s [id=sg-0a1629f7396a09d95]
+data.aws_subnet_ids.default: Read complete after 0s [id=vpc-036ae5d3b549574df]
+aws_lb_target_group.auto-target-group: Creation complete after 1s [id=arn:aws:elasticloadbalancing:us-east-1:461184534637:targetgroup/test/dbb9f9a501c3520f]
+aws_security_group.loadbalance-sg: Creation complete after 3s [id=sg-094c05bbc3237cfe3]
 aws_lb.application-load-balancer: Creating...
 aws_security_group.ec2-sg: Creating...
-aws_security_group.ec2-sg: Creation complete after 3s [id=sg-0209fd71c808ba5b9]
+aws_security_group.ec2-sg: Creation complete after 4s [id=sg-0ec0472230091f0d9]
 aws_launch_template.launch-configuration-template: Creating...
-aws_launch_template.launch-configuration-template: Creation complete after 1s [id=lt-05673344896f828ad]
+aws_launch_template.launch-configuration-template: Creation complete after 1s [id=lt-06ed2ee8955e99295]
 aws_autoscaling_group.auto-scaling-group: Creating...
 aws_lb.application-load-balancer: Still creating... [10s elapsed]
 aws_autoscaling_group.auto-scaling-group: Still creating... [10s elapsed]
@@ -100,14 +101,40 @@ aws_lb.application-load-balancer: Still creating... [30s elapsed]
 aws_autoscaling_group.auto-scaling-group: Still creating... [30s elapsed]
 aws_lb.application-load-balancer: Still creating... [40s elapsed]
 aws_autoscaling_group.auto-scaling-group: Still creating... [40s elapsed]
-aws_autoscaling_group.auto-scaling-group: Creation complete after 43s [id=test]
-aws_autoscaling_policy.auto-scaling-policy-BW: Creating...
-aws_autoscaling_policy.auto-scaling-policy-CPU: Creating...
-aws_autoscaling_policy.auto-scaling-policy-BW: Creation complete after 2s [id=BW]
-aws_autoscaling_policy.auto-scaling-policy-CPU: Creation complete after 2s [id=CPU]
 aws_lb.application-load-balancer: Still creating... [50s elapsed]
+aws_autoscaling_group.auto-scaling-group: Still creating... [50s elapsed]
 aws_lb.application-load-balancer: Still creating... [1m0s elapsed]
+aws_autoscaling_group.auto-scaling-group: Still creating... [1m0s elapsed]
+aws_autoscaling_group.auto-scaling-group: Creation complete after 1m5s [id=test]
+aws_autoscaling_policy.auto-scaling-policy-CPU: Creating...
+aws_autoscaling_policy.auto-scaling-policy-BW: Creating...
 aws_lb.application-load-balancer: Still creating... [1m10s elapsed]
+aws_autoscaling_policy.auto-scaling-policy-BW: Creation complete after 1s [id=BW]
+aws_autoscaling_policy.auto-scaling-policy-CPU: Creation complete after 2s [id=CPU]
+aws_lb.application-load-balancer: Still creating... [1m20s elapsed]
+aws_lb.application-load-balancer: Still creating... [1m30s elapsed]
+aws_lb.application-load-balancer: Still creating... [1m40s elapsed]
+aws_lb.application-load-balancer: Still creating... [1m50s elapsed]
+aws_lb.application-load-balancer: Still creating... [2m0s elapsed]
+aws_lb.application-load-balancer: Still creating... [2m10s elapsed]
+aws_lb.application-load-balancer: Still creating... [2m20s elapsed]
+aws_lb.application-load-balancer: Still creating... [2m30s elapsed]
+aws_lb.application-load-balancer: Still creating... [2m40s elapsed]
+aws_lb.application-load-balancer: Still creating... [2m50s elapsed]
+aws_lb.application-load-balancer: Still creating... [3m0s elapsed]
+aws_lb.application-load-balancer: Still creating... [3m10s elapsed]
+aws_lb.application-load-balancer: Still creating... [3m20s elapsed]
+aws_lb.application-load-balancer: Still creating... [3m30s elapsed]
+aws_lb.application-load-balancer: Provisioning with 'local-exec'...
+aws_lb.application-load-balancer (local-exec): Executing: ["/bin/sh" "-c" "echo test-1067508475.us-east-1.elb.amazonaws.com"]
+aws_lb.application-load-balancer (local-exec): test-1067508475.us-east-1.elb.amazonaws.com
+aws_lb.application-load-balancer: Creation complete after 3m39s [id=arn:aws:elasticloadbalancing:us-east-1:461184534637:loadbalancer/app/test/caf88c77828da862]
+aws_lb_listener.application-listener-http: Creating...
+aws_lb_listener.application-listener-https: Creating...
+aws_lb_listener.application-listener-http: Creation complete after 1s [id=arn:aws:elasticloadbalancing:us-east-1:461184534637:listener/app/test/caf88c77828da862/4c63fa94ea0751f9]
+aws_lb_listener.application-listener-https: Creation complete after 1s [id=arn:aws:elasticloadbalancing:us-east-1:461184534637:listener/app/test/caf88c77828da862/cf425829d803e25b]
+
+Apply complete! Resources: 12 added, 0 changed, 0 destroyed.
 ```
 ### Terraform destroy
 terraform destroy
