@@ -1,4 +1,4 @@
-# The instruction to build an AWS scaling system using Terrform (on default VPC)
+# Build an AWS scaling system using Terrform (on default VPC)
 ### The system includes:
 * #####  Application Load Balancer: HTTPS, HTTP will be redirected to HTTPS, the TLS certificate is local one (can be replaced with the one in ACM)
 * #####  Auto-scaling group: Min=1, Max=4, EC2 with scale metric: CPU 60% and NetworkInput 600Mbytes/s, Immutable deployment
