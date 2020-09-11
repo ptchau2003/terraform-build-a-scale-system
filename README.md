@@ -22,7 +22,7 @@
         "Path": "/",
         "ServerCertificateName": "elastic-beanstalk-x509", 
          "ServerCertificateId": "XXXXXXXXXXXXXXXXXXX", 
-         "Arn": "arn:aws:iam::XXXXXXXXXXXXXX:server-certificate/elastic-beanstalk-x509", 
+         "Arn": "arn:aws:iam::XXXXXXXXXXXXXX:server-certificate/application-loadbalacer-x509", 
          "UploadDate": "2020-08-31T11:38:47+00:00", 
          "Expiration": "2021-08-31T08:33:36+00:00" 
      } 
