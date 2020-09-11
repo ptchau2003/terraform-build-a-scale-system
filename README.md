@@ -28,8 +28,10 @@
  ```
  ### Generate RSA SSH key for EC2
  ssh-keygen
- 
- 
+ ```
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/cloud_user/.ssh/id_rsa):
+``` 
 ### Input the AWS key, prepare for the AWS deployment
 aws configure
 ```
