@@ -128,4 +128,28 @@ aws_lb.application-load-balancer: Destroying... [id=arn:aws:elasticloadbalancing
 aws_autoscaling_policy.auto-scaling-policy-CPU: Destruction complete after 1s
 aws_autoscaling_policy.auto-scaling-policy-BW: Destruction complete after 1s
 aws_autoscaling_group.auto-scaling-group: Destroying... [id=test]
+aws_lb.application-load-balancer: Destruction complete after 2s
+aws_autoscaling_group.auto-scaling-group: Still destroying... [id=test, 10s elapsed]
+aws_autoscaling_group.auto-scaling-group: Still destroying... [id=test, 20s elapsed]
+aws_autoscaling_group.auto-scaling-group: Still destroying... [id=test, 30s elapsed]
+aws_autoscaling_group.auto-scaling-group: Still destroying... [id=test, 40s elapsed]
+aws_autoscaling_group.auto-scaling-group: Still destroying... [id=test, 50s elapsed]
+aws_autoscaling_group.auto-scaling-group: Still destroying... [id=test, 1m0s elapsed]
+aws_autoscaling_group.auto-scaling-group: Still destroying... [id=test, 1m10s elapsed]
+aws_autoscaling_group.auto-scaling-group: Still destroying... [id=test, 1m20s elapsed]
+aws_autoscaling_group.auto-scaling-group: Destruction complete after 1m29s
+aws_launch_template.launch-configuration-template: Destroying... [id=lt-05673344896f828ad]
+aws_lb_target_group.auto-target-group: Destroying... [id=arn:aws:elasticloadbalancing:us-east-1:461184534637:targetgroup/test/ee53559f2226cc9c]
+aws_lb_target_group.auto-target-group: Destruction complete after 1s
+aws_launch_template.launch-configuration-template: Destruction complete after 1s
+aws_key_pair.ec2-key: Destroying... [id=ec2-key]
+aws_security_group.ec2-sg: Destroying... [id=sg-0209fd71c808ba5b9]
+aws_key_pair.ec2-key: Destruction complete after 0s
+aws_security_group.ec2-sg: Destruction complete after 1s
+aws_security_group.loadbalance-sg: Destroying... [id=sg-0a1629f7396a09d95]
+aws_security_group.loadbalance-sg: Destruction complete after 1s
+aws_default_vpc.default: Destroying... [id=vpc-036ae5d3b549574df]
+aws_default_vpc.default: Destruction complete after 0s
+
+Destroy complete! Resources: 12 destroyed.
 ```
