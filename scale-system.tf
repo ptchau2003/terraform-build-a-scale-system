@@ -3,7 +3,7 @@
 ### 2. ASG
 ### 3. Target Group
 ### 4. Launching Config
-### 5. Database: DynamoDB
+### 5. EC2
 
 terraform {
   required_providers {
@@ -22,13 +22,23 @@ provider "aws" {
 variable "region" {
   default = "us-east-1"
 }
-
+variable "certificate_arn" {
+  type = string
+  description = "The local certificate ARN was get from previous step"
+}
+variable "publickey_directory" {
+  description = "The directory of RSA private key created: /home/<user>/.ssh/id_rsa.pub"
+  default     = "id_rsa.pub"
+}
 variable "env" {
-  default = "dev"
+  description = "Enviroment: Dev/Test/UAT"
+  default =   "Dev"
 }
 
 variable "project-name" {
-  default = "test"
+  type = string
+  description = "Your project name"
+  default = "TestBed"
 }
 
 resource "aws_default_vpc" "default" {
@@ -39,7 +49,7 @@ resource "aws_default_vpc" "default" {
 # Launch configuration data
 resource "aws_key_pair" "ec2-key" {
   key_name   = "ec2-key"
-  public_key = file("/home/cloud_user/.ssh/id_rsa.pub")
+  public_key = file(var.publickey_directory)
 }
 
 variable "launch-configuration-ami" {
@@ -214,7 +224,7 @@ resource "aws_lb_listener" "application-listener-https" {
   port              = "443"
   protocol          = "HTTPS"
   ssl_policy        = "ELBSecurityPolicy-2016-08"
-  certificate_arn   = "arn:aws:iam::420672505413:server-certificate/elastic-beanstalk-x509"
+  certificate_arn   = var.certificate_arn
   default_action {
     type             = "forward"
     target_group_arn = aws_lb_target_group.auto-target-group.arn
