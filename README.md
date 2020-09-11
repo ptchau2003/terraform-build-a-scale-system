@@ -5,14 +5,14 @@
 * #####  Launch configuration EC2: t3.micro, 20G standard disk mount point /dev/sda1, user_data with nginx_install.sh will install NGINX, keypair name: ec2-key, private key saved on your local machine directory /home/your_user/.ssh/id_rsa.pub
 
  ### Generating the local X509 key and put it into IAM (it is for HTTPS) 
- ###### Generate RSA key:
+ ###### Generate RSA key
    *openssl genrsa 2048 > privatekey.pem*
- ###### Generate CSR key:
+ ###### Generate CSR key
    *openssl req -new -key privatekey.pem -out csr.pem* 
- ###### Generate CRT key:
+ ###### Generate CRT key
    *openssl x509 -req -days 365 -in csr.pem -signkey privatekey.pem -out public.crt*
 
-### Put the certificate into IAM:
+### Put the certificate into IAM
  *aws iam upload-server-certificate --server-certificate-name application-loadbalacer-x509 --certificate-body file://public.crt --private-key file://privatekey.pem* 
  
    **TAKE NOTE THE ARN**
