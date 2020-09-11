@@ -13,7 +13,7 @@
    *openssl x509 -req -days 365 -in csr.pem -signkey privatekey.pem -out public.crt*
 
 ### Put the certificate into IAM:
- *aws iam upload-server-certificate --server-certificate-name elastic-beanstalk-x509 --certificate-body file://public.crt --private-key file://privatekey.pem*
+ *aws iam upload-server-certificate --server-certificate-name application-loadbalacer-x509 --certificate-body file://public.crt --private-key file://privatekey.pem*
 ```json
  { 
     "ServerCertificateMetadata": { 
@@ -68,7 +68,16 @@ Success! The configuration is valid.
 ```
 ### Deploy the scaling system
 terrafrom apply
+var.certificate_arn
+  The local certificate ARN was get from previous step
+  Enter a value: arn:aws:iam::XXXXXXXXXXXXXXX:server-certificate/application-loadbalacer-x509
+
+var.privatekey_directory
+  The directory of RSA private key created: /home/<user>/.ssh/id_rsa
+  Enter a value: /home/cloud_user/.ssh/id_rsa
 ```
+An execution plan has been generated and is shown below.
+
 Plan: 12 to add, 0 to change, 0 to destroy.
 
 Do you want to perform these actions?
