@@ -6,12 +6,12 @@
 ##### 4. Launch configuration
 ##### 5. EC2
 
- ###### Generating the local X509 key and put it into IAM (it is for HTTPS) 
- **Generate RSA key:**
+ ##### Generating the local X509 key and put it into IAM (it is for HTTPS) 
+ ###### Generate RSA key:
  openssl genrsa 2048 > privatekey.pem 
- **Generate CSR key:**
+ ###### Generate CSR key:
  openssl req -new -key privatekey.pem -out csr.pem 
- **Generate CRT key**
+ ###### Generate CRT key:
  openssl x509 -req -days 365 -in csr.pem -signkey privatekey.pem -out public.crt 
 
 * Put into IAM:
