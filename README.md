@@ -1,7 +1,7 @@
 # The instruction to build an AWS scaling system using Terrform (on default VPC)
 ### The system includes:
 * #####  Application Load Balancer: HTTPS, HTTP will be redirected to HTTPS, the TLS certificate is local one (can be replaced with the one in ACM)
-* #####  Auto-scaling group: Min=1, Max=4, EC2 with scale metric: CPU 60% and NetworkInput 600Mbytes/s
+* #####  Auto-scaling group: Min=1, Max=4, EC2 with scale metric: CPU 60% and NetworkInput 600Mbytes/s, Immutable deployment
 * #####  Launch configuration EC2: t3.micro, 20G standard disk mount point /dev/sda1, user_data with nginx_install.sh will install NGINX, keypair: ec2-key, private key saved on your local machine directory
 
  ### Generating the local X509 key and put it into IAM (it is for HTTPS) 
