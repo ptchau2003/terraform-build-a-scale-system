@@ -30,10 +30,9 @@
  ```
 ### Input the AWS key, prepare for the AWS deploy
 ```
-cloud_user@chauphan1c:~$ aws configure
-AWS Access Key ID [****************XUOH]: AKIAWWYF5RBWSQBV3IF7
-AWS Secret Access Key [****************EQSD]: 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
+aws configure
+AWS Access Key ID [****************XUOH]: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+AWS Secret Access Key [****************EQSD]: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 Default region name [us-east-1]:
 Default output format [json]:
-cloud_user@chauphan1c:~$
 ```
