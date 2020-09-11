@@ -2,8 +2,7 @@
 ### The system includes:
 * #####  Application Load Balancer: HTTPS, HTTP will be redirected to HTTPS
 * #####  Auto-scaling group: Min=1, Max=4, EC2 with scale metric: CPU 60% and NetworkInput 600Mbytes/s
-* #####  Target Group
-* #####  Launch configuration EC2: t3.micro, 10G general disk mount on /dev/sda1 
+* #####  Launch configuration EC2: t3.micro, 20G standard disk mount point /dev/sda1, user_data with nginx_install.sh will install NGINX, keypair: ec2-key, private key saved on your local machine directory
 
  ### Generating the local X509 key and put it into IAM (it is for HTTPS) 
  ###### Generate RSA key:
@@ -28,17 +27,16 @@
  }
  ```
 ### Input the AWS key, prepare for the AWS deploy
-```
 aws configure
+```
 AWS Access Key ID [****************XUOH]: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 AWS Secret Access Key [****************EQSD]: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 Default region name [us-east-1]:
 Default output format [json]:
 ```
 ### Terraform init
-```
 terraform init
-
+```
 Initializing the backend...
 
 Initializing provider plugins...
@@ -64,10 +62,50 @@ rerun this command to reinitialize your working directory. If you forget, other
 commands will detect it and remind you to do so if necessary.
 ```
 ### Terraform validate
-```
 terraform validate
+```
 Success! The configuration is valid.
 ```
 ### Deploy the scaling system
 terrafrom apply
+```
+Plan: 12 to add, 0 to change, 0 to destroy.
 
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: **yes**
+aws_key_pair.ec2-key: Creating...
+aws_default_vpc.default: Creating...
+aws_key_pair.ec2-key: Creation complete after 0s [id=ec2-key]
+aws_default_vpc.default: Creation complete after 4s [id=vpc-036ae5d3b549574df]
+data.aws_subnet_ids.default: Reading...
+aws_lb_target_group.auto-target-group: Creating...
+aws_security_group.loadbalance-sg: Creating...
+data.aws_subnet_ids.default: Read complete after 1s [id=vpc-036ae5d3b549574df]
+aws_lb_target_group.auto-target-group: Creation complete after 2s [id=arn:aws:elasticloadbalancing:us-east-1:461184534637:targetgroup/test/ee53559f2226cc9c]
+aws_security_group.loadbalance-sg: Creation complete after 4s [id=sg-0a1629f7396a09d95]
+aws_lb.application-load-balancer: Creating...
+aws_security_group.ec2-sg: Creating...
+aws_security_group.ec2-sg: Creation complete after 3s [id=sg-0209fd71c808ba5b9]
+aws_launch_template.launch-configuration-template: Creating...
+aws_launch_template.launch-configuration-template: Creation complete after 1s [id=lt-05673344896f828ad]
+aws_autoscaling_group.auto-scaling-group: Creating...
+aws_lb.application-load-balancer: Still creating... [10s elapsed]
+aws_autoscaling_group.auto-scaling-group: Still creating... [10s elapsed]
+aws_lb.application-load-balancer: Still creating... [20s elapsed]
+aws_autoscaling_group.auto-scaling-group: Still creating... [20s elapsed]
+aws_lb.application-load-balancer: Still creating... [30s elapsed]
+aws_autoscaling_group.auto-scaling-group: Still creating... [30s elapsed]
+aws_lb.application-load-balancer: Still creating... [40s elapsed]
+aws_autoscaling_group.auto-scaling-group: Still creating... [40s elapsed]
+aws_autoscaling_group.auto-scaling-group: Creation complete after 43s [id=test]
+aws_autoscaling_policy.auto-scaling-policy-BW: Creating...
+aws_autoscaling_policy.auto-scaling-policy-CPU: Creating...
+aws_autoscaling_policy.auto-scaling-policy-BW: Creation complete after 2s [id=BW]
+aws_autoscaling_policy.auto-scaling-policy-CPU: Creation complete after 2s [id=CPU]
+aws_lb.application-load-balancer: Still creating... [50s elapsed]
+aws_lb.application-load-balancer: Still creating... [1m0s elapsed]
+aws_lb.application-load-balancer: Still creating... [1m10s elapsed]
+```
