@@ -4,5 +4,5 @@
 ##### 2. Auto-scaling group
 ##### 3. Target Group
 ##### 4. Launch configuration
-##### 4. EC2
+##### 5. EC2
 
