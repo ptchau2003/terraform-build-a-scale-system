@@ -196,7 +196,8 @@ aws_default_vpc.default: Destruction complete after 0s
 Destroy complete! Resources: 12 destroyed.
 ```
 ### Tips: Make a CPU stress test to make sure auto-scaling working well
-Stress test for all CPUs with 80% load: \n
+Stress test for all CPUs with 80% load:
+
 **sudo stress-ng -c 0 -l 80**
 ```
 
