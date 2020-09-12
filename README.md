@@ -81,18 +81,18 @@ Do you want to perform these actions?
 aws_key_pair.ec2-key: Creating...
 aws_default_vpc.default: Creating...
 aws_key_pair.ec2-key: Creation complete after 1s [id=ec2-key]
-aws_default_vpc.default: Creation complete after 5s [id=vpc-036ae5d3b549574df]
+aws_default_vpc.default: Creation complete after 5s [id=vpc-XXXXXXXXXXXXXXXXXXXXXXXXXXX]
 data.aws_subnet_ids.default: Reading...
 aws_lb_target_group.auto-target-group: Creating...
 aws_security_group.loadbalance-sg: Creating...
 data.aws_subnet_ids.default: Read complete after 0s [id=vpc-036ae5d3b549574df]
-aws_lb_target_group.auto-target-group: Creation complete after 1s [id=arn:aws:elasticloadbalancing:us-east-1:461184534637:targetgroup/test/dbb9f9a501c3520f]
-aws_security_group.loadbalance-sg: Creation complete after 3s [id=sg-094c05bbc3237cfe3]
+aws_lb_target_group.auto-target-group: Creation complete after 1s [id=arn:aws:elasticloadbalancing:us-east-1:XXXXXXXXXXXXXXXXXXXXXXXXXXX:targetgroup/test/XXXXXXXXXXXXXXXXXXXXXXXXXXX]
+aws_security_group.loadbalance-sg: Creation complete after 3s [id=sg-XXXXXXXXXXXXXXXXXXXXXXXXXXX]
 aws_lb.application-load-balancer: Creating...
 aws_security_group.ec2-sg: Creating...
 aws_security_group.ec2-sg: Creation complete after 4s [id=sg-0ec0472230091f0d9]
 aws_launch_template.launch-configuration-template: Creating...
-aws_launch_template.launch-configuration-template: Creation complete after 1s [id=lt-06ed2ee8955e99295]
+aws_launch_template.launch-configuration-template: Creation complete after 1s [id=lt-XXXXXXXXXXXXXXXXXXXXXXXXXXX]
 aws_autoscaling_group.auto-scaling-group: Creating...
 aws_lb.application-load-balancer: Still creating... [10s elapsed]
 aws_autoscaling_group.auto-scaling-group: Still creating... [10s elapsed]
@@ -127,13 +127,13 @@ aws_lb.application-load-balancer: Still creating... [3m10s elapsed]
 aws_lb.application-load-balancer: Still creating... [3m20s elapsed]
 aws_lb.application-load-balancer: Still creating... [3m30s elapsed]
 aws_lb.application-load-balancer: Provisioning with 'local-exec'...
-aws_lb.application-load-balancer (local-exec): Executing: ["/bin/sh" "-c" "echo test-1067508475.us-east-1.elb.amazonaws.com"]
-aws_lb.application-load-balancer (local-exec): test-1067508475.us-east-1.elb.amazonaws.com
-aws_lb.application-load-balancer: Creation complete after 3m39s [id=arn:aws:elasticloadbalancing:us-east-1:461184534637:loadbalancer/app/test/caf88c77828da862]
+aws_lb.application-load-balancer (local-exec): Executing: ["/bin/sh" "-c" "echo XXXXXXXXXXXXXXXXXXXXXXXXXXX.us-east-1.elb.amazonaws.com"]
+aws_lb.application-load-balancer (local-exec): XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+aws_lb.application-load-balancer: Creation complete after 3m39s [id=arn:aws:elasticloadbalancing:us-east-1:XXXXXXXXXXXXXXXXXXXXXXXXXXX]
 aws_lb_listener.application-listener-http: Creating...
 aws_lb_listener.application-listener-https: Creating...
-aws_lb_listener.application-listener-http: Creation complete after 1s [id=arn:aws:elasticloadbalancing:us-east-1:461184534637:listener/app/test/caf88c77828da862/4c63fa94ea0751f9]
-aws_lb_listener.application-listener-https: Creation complete after 1s [id=arn:aws:elasticloadbalancing:us-east-1:461184534637:listener/app/test/caf88c77828da862/cf425829d803e25b]
+aws_lb_listener.application-listener-http: Creation complete after 1s [id=arn:aws:elasticloadbalancing:us-east-1:XXXXXXXXXXXXXXXXXXXXXXXXXXX]
+aws_lb_listener.application-listener-https: Creation complete after 1s [id=arn:aws:elasticloadbalancing:us-east-1:XXXXXXXXXXXXXXXXXXXXXXXXXXX]
 
 Apply complete! Resources: 12 added, 0 changed, 0 destroyed.
 ```
@@ -147,12 +147,12 @@ Do you really want to destroy all resources?
   Enter a value: yes
 
 aws_autoscaling_policy.auto-scaling-policy-CPU: Destroying... [id=CPU]
-aws_lb_listener.application-listener-http: Destroying... [id=arn:aws:elasticloadbalancing:us-east-1:461184534637:listener/app/test/68b4faaea78a0521/a7191ca120a6ddf6]
+aws_lb_listener.application-listener-http: Destroying... [id=arn:aws:elasticloadbalancing:us-east-1:XXXXXXXXXXXXXXXXXXXXXXXXXXX]
 aws_autoscaling_policy.auto-scaling-policy-BW: Destroying... [id=BW]
-aws_lb_listener.application-listener-https: Destroying... [id=arn:aws:elasticloadbalancing:us-east-1:461184534637:listener/app/test/68b4faaea78a0521/231501e417913f83]
+aws_lb_listener.application-listener-https: Destroying... [id=arn:aws:elasticloadbalancing:us-east-1:XXXXXXXXXXXXXXXXXXXXXXXXXXX]
 aws_lb_listener.application-listener-https: Destruction complete after 1s
 aws_lb_listener.application-listener-http: Destruction complete after 1s
-aws_lb.application-load-balancer: Destroying... [id=arn:aws:elasticloadbalancing:us-east-1:461184534637:loadbalancer/app/test/68b4faaea78a0521]
+aws_lb.application-load-balancer: Destroying... [id=arn:aws:elasticloadbalancing:us-east-XXXXXXXXXXXXXXXXXXXXXXXXXXX]
 aws_autoscaling_policy.auto-scaling-policy-CPU: Destruction complete after 1s
 aws_autoscaling_policy.auto-scaling-policy-BW: Destruction complete after 1s
 aws_autoscaling_group.auto-scaling-group: Destroying... [id=test]
@@ -166,17 +166,17 @@ aws_autoscaling_group.auto-scaling-group: Still destroying... [id=test, 1m0s ela
 aws_autoscaling_group.auto-scaling-group: Still destroying... [id=test, 1m10s elapsed]
 aws_autoscaling_group.auto-scaling-group: Still destroying... [id=test, 1m20s elapsed]
 aws_autoscaling_group.auto-scaling-group: Destruction complete after 1m29s
-aws_launch_template.launch-configuration-template: Destroying... [id=lt-05673344896f828ad]
-aws_lb_target_group.auto-target-group: Destroying... [id=arn:aws:elasticloadbalancing:us-east-1:461184534637:targetgroup/test/ee53559f2226cc9c]
+aws_launch_template.launch-configuration-template: Destroying... [id=lt-XXXXXXXXXXXXXXXXXXXXXXXXXXX]
+aws_lb_target_group.auto-target-group: Destroying... [id=arn:aws:elasticloadbalancing:us-east-1:XXXXXXXXXXXXXXXXXXXXXXXXXXX]
 aws_lb_target_group.auto-target-group: Destruction complete after 1s
 aws_launch_template.launch-configuration-template: Destruction complete after 1s
 aws_key_pair.ec2-key: Destroying... [id=ec2-key]
-aws_security_group.ec2-sg: Destroying... [id=sg-0209fd71c808ba5b9]
+aws_security_group.ec2-sg: Destroying... [id=XXXXXXXXXXXXXXXXXXXXXXXXXXX]
 aws_key_pair.ec2-key: Destruction complete after 0s
 aws_security_group.ec2-sg: Destruction complete after 1s
-aws_security_group.loadbalance-sg: Destroying... [id=sg-0a1629f7396a09d95]
+aws_security_group.loadbalance-sg: Destroying... [id=XXXXXXXXXXXXXXXXXXXXXXXXXXX]
 aws_security_group.loadbalance-sg: Destruction complete after 1s
-aws_default_vpc.default: Destroying... [id=vpc-036ae5d3b549574df]
+aws_default_vpc.default: Destroying... [id=vpc-XXXXXXXXXXXXXXXXXXXXXXXXXXX]
 aws_default_vpc.default: Destruction complete after 0s
 
 Destroy complete! Resources: 12 destroyed.
@@ -195,6 +195,6 @@ Successful	Launching a new EC2 instance: i-XXXXXXXXXXXXXXXX	At 2020-09-12T08:35:
 ```
 ### Release the CPU stress and see the auto-scaling in
 ```
-WaitingForELBConnectionDraining	Terminating EC2 instance: XXXXXXXXX - Waiting For ELB Connection Draining.	At 2020-09-12T10:16:52Z a monitor alarm TargetTracking-TestBed-AlarmLow-7ef02880-c8af-454a-8f51-01210bcc7efd in state ALARM triggered policy CPU changing the desired capacity from 3 to 2. At 2020-09-12T10:17:02Z an instance was taken out of service in response to a difference between desired and actual capacity, shrinking the capacity from 3 to 2. At 2020-09-12T10:17:02Z instance XXXXXXXXXXXXX was selected for termination.
+WaitingForELBConnectionDraining	Terminating EC2 instance: XXXXXXXXX - Waiting For ELB Connection Draining.	At 2020-09-12T10:16:52Z a monitor alarm TargetTracking-TestBed-AlarmLow-XXXXXXXXXXXXXXXXXXXXXXXXXXX in state ALARM triggered policy CPU changing the desired capacity from 3 to 2. At 2020-09-12T10:17:02Z an instance was taken out of service in response to a difference between desired and actual capacity, shrinking the capacity from 3 to 2. At 2020-09-12T10:17:02Z instance XXXXXXXXXXXXX was selected for termination.
 ```
 
