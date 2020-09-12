@@ -186,7 +186,6 @@ Stress test for all CPUs with 80% load:
 
 **sudo stress-ng -c 0 -l 80**
 ```
-
 stress-ng: info:  [2292] defaulting to a 86400 second (1 day, 0.00 secs) run per stressor
 stress-ng: info:  [2292] dispatching hogs: 2 cpu
 ```
