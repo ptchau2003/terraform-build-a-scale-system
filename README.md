@@ -181,7 +181,7 @@ aws_default_vpc.default: Destruction complete after 0s
 
 Destroy complete! Resources: 12 destroyed.
 ```
-### Tips: Make a CPU stress test to make sure auto-scaling working well
+### Make a CPU stress test to make sure auto-scaling working well
 Stress test for all CPUs with 80% load:
 
 **sudo stress-ng -c 0 -l 80**
@@ -197,4 +197,3 @@ Successful	Launching a new EC2 instance: i-XXXXXXXXXXXXXXXX	At 2020-09-12T08:35:
 ```
 WaitingForELBConnectionDraining	Terminating EC2 instance: XXXXXXXXX - Waiting For ELB Connection Draining.	At 2020-09-12T10:16:52Z a monitor alarm TargetTracking-TestBed-AlarmLow-XXXXXXXXXXXXXXXXXXXXXXXXXXX in state ALARM triggered policy CPU changing the desired capacity from 3 to 2. At 2020-09-12T10:17:02Z an instance was taken out of service in response to a difference between desired and actual capacity, shrinking the capacity from 3 to 2. At 2020-09-12T10:17:02Z instance XXXXXXXXXXXXX was selected for termination.
 ```
-
