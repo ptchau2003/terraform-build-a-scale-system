@@ -12,22 +12,7 @@
  ###### Generate CRT key
    *openssl x509 -req -days 365 -in csr.pem -signkey privatekey.pem -out public.crt*
 
-### Put the certificate into IAM
- *aws iam upload-server-certificate --server-certificate-name application-loadbalacer-x509 --certificate-body file://public.crt --private-key file://privatekey.pem* 
- 
-   **TAKE NOTE THE ARN**
-```json
- { 
-    "ServerCertificateMetadata": { 
-        "Path": "/",
-        "ServerCertificateName": "elastic-beanstalk-x509", 
-         "ServerCertificateId": "XXXXXXXXXXXXXXXXXXX", 
-         "Arn": "arn:aws:iam::XXXXXXXXXXXXXX:server-certificate/application-loadbalacer-x509", 
-         "UploadDate": "2020-08-31T11:38:47+00:00", 
-         "Expiration": "2021-08-31T08:33:36+00:00" 
-     } 
- }
- ```
+##### Note the CRT key name is public.crt and the private key name is privatekey.pem, they are hardcode-used in Terrform script.
  ### Generate RSA SSH key for EC2
  ssh-keygen
  ```
