@@ -4,7 +4,9 @@
 # .tfstate files
 *.tfstate
 *.tfstate.*
-
+*.pem
+*.crt
+*.pub
 # Crash log files
 crash.log
 

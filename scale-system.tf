@@ -22,10 +22,7 @@ provider "aws" {
 variable "region" {
   default = "us-east-1"
 }
-variable "certificate_arn" {
-  type = string
-  description = "The local certificate ARN was get from previous step"
-}
+
 variable "publickey_directory" {
   description = "The directory of RSA private key created: /home/<user>/.ssh/id_rsa.pub"
   default     = "id_rsa.pub"
@@ -219,12 +216,21 @@ resource "aws_lb" "application-load-balancer" {
   }
 }
 
+resource "aws_iam_server_certificate" "https-certification" {
+  name_prefix      = var.project-name
+  certificate_body = file("public.crt")
+  private_key      = file("privatekey.pem")
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}
 resource "aws_lb_listener" "application-listener-https" {
   load_balancer_arn = aws_lb.application-load-balancer.arn
   port              = "443"
   protocol          = "HTTPS"
   ssl_policy        = "ELBSecurityPolicy-2016-08"
-  certificate_arn   = var.certificate_arn
+  certificate_arn   = aws_iam_server_certificate.https-certification.arn
   default_action {
     type             = "forward"
     target_group_arn = aws_lb_target_group.auto-target-group.arn
