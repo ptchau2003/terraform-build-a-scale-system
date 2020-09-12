@@ -24,6 +24,7 @@
 Generating public/private rsa key pair.
 Enter file in which to save the key (/home/cloud_user/.ssh/id_rsa):
 ``` 
+### ALL THE SSH KEY AND TLS KEYS MUST BE PUT IN SAME DIRECTORY IN TERRAFORM DIRECTORY
 ### Input the AWS key, prepare for the AWS deployment
 aws configure
 ```
