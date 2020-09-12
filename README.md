@@ -68,11 +68,6 @@ Success! The configuration is valid.
 ### Deploy the scaling system
 terrafrom apply
 ```
-var.certificate_arn
-  The local certificate ARN was get from previous step
-  Enter a value: arn:aws:iam::XXXXXXXXXXXXXXX:server-certificate/application-loadbalacer-x509
-```
-```
 An execution plan has been generated and is shown below.
 
 Plan: 12 to add, 0 to change, 0 to destroy.
