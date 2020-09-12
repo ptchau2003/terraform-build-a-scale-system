@@ -189,7 +189,7 @@ Stress test for all CPUs with 80% load:
 stress-ng: info:  [2292] defaulting to a 86400 second (1 day, 0.00 secs) run per stressor
 stress-ng: info:  [2292] dispatching hogs: 2 cpu
 ```
-Check the Autoscaling Group activity logs
+### Check the Autoscaling Group activity logs auto-scaling out
 ```
 Successful	Launching a new EC2 instance: i-XXXXXXXXXXXXXXXX	At 2020-09-12T08:35:11Z an instance was started in response to a difference between desired and actual capacity, increasing the capacity from 1 to 2.
 ```
