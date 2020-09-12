@@ -193,3 +193,7 @@ Check the Autoscaling Group activity logs
 ```
 Successful	Launching a new EC2 instance: i-XXXXXXXXXXXXXXXX	At 2020-09-12T08:35:11Z an instance was started in response to a difference between desired and actual capacity, increasing the capacity from 1 to 2.
 ```
+### Release the CPU stress and see the auto-scaling in
+```WaitingForELBConnectionDraining	Terminating EC2 instance: XXXXXXXXX - Waiting For ELB Connection Draining.	At 2020-09-12T10:16:52Z a monitor alarm TargetTracking-TestBed-AlarmLow-7ef02880-c8af-454a-8f51-01210bcc7efd in state ALARM triggered policy CPU changing the desired capacity from 3 to 2. At 2020-09-12T10:17:02Z an instance was taken out of service in response to a difference between desired and actual capacity, shrinking the capacity from 3 to 2. At 2020-09-12T10:17:02Z instance XXXXXXXXXXXXX was selected for termination.
+```
+
