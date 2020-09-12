@@ -66,7 +66,7 @@ terraform validate
 Success! The configuration is valid.
 ```
 ### Deploy the scaling system
-terrafrom apply
+terrafrom apply -var-file='scale-system.tfvars'
 ```
 An execution plan has been generated and is shown below.
 
@@ -138,7 +138,7 @@ aws_lb_listener.application-listener-https: Creation complete after 1s [id=arn:a
 Apply complete! Resources: 12 added, 0 changed, 0 destroyed.
 ```
 ### Terraform destroy
-terraform destroy
+terraform destroy -var-file='scale-system.tfvars'
 ```
 Do you really want to destroy all resources?
   Terraform will destroy all your managed infrastructure, as shown above.
