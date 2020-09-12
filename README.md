@@ -29,7 +29,7 @@ Enter file in which to save the key (/home/cloud_user/.ssh/id_rsa):
 aws configure
 ```
 AWS Access Key ID [****************XUOH]: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-AWS Secret Access Key [****************EQSD]: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+AWS Secret Access Key [****************EQSD]: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 Default region name [us-east-1]:
 Default output format [json]:
 ```
