@@ -12,7 +12,7 @@
  ###### Generate CRT key
    *openssl x509 -req -days 365 -in csr.pem -signkey privatekey.pem -out public.crt*
 
-##### Note the CRT key name is public.crt and the private key name is privatekey.pem, they are hardcode-used in Terrform script.
+##### Note the CRT key name is **public.crt** and the private key name is **privatekey.pem**, they are hardcode-used in Terrform script.
  ### Generate RSA SSH key for EC2
  ssh-keygen
  ```
