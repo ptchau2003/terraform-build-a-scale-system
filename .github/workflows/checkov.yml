@@ -16,6 +16,6 @@ jobs:
         id: checkov
         uses: bridgecrewio/checkov-action@master
         with:
-          directory: eks-cluster-dev/
+          directory: .
           framework: terraform
           quiet: true
